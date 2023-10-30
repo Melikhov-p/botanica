@@ -1,0 +1,10 @@
+{% load static %}
+<link href="{% static "css/base.css" %}" rel="stylesheet">
+<meta charset="UTF-8">
+<header>
+    <div class="header-center">
+        <h1>BOTANICA</h1>
+        <hr>
+        <div class=“links”><a href={% url 'main_page' %}>Главная</a><a href={% url 'contacts' %}>Контакты</a><a href='#'>О нас</a></div>
+    </div>
+</header>

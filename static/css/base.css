@@ -1,0 +1,130 @@
+html {
+    background-color: rgb(211, 224, 238);
+    font-family: Circe, Trebuchet MS, sans-serif;
+    width: 100%;
+    color: #3d1522;
+}
+
+header {
+    color: #3d1522;
+    background-color: #f0dbde;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+header a {
+    color: #3d1522;
+    text-decoration: none;
+    padding: 2px 35px 35px;
+}
+
+header a:hover {
+    color: #ff8674;
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 5px;
+}
+
+header hr {
+    width: 100%;
+    border-color: #3d1522;
+    animation: hr linear 1s;
+}
+
+@keyframes hr {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+body {
+    background-color: #fbfbfb;
+    margin: 0;
+    height: 100vh;
+    /*overflow-x: hidden;*/
+}
+
+.animate {
+    animation: appear 1s linear forwards;
+}
+
+@keyframes appear {
+    from {
+        transform: translateY(10%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.main-container {
+    padding-top: 15px;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.main-container > .sidebar {
+    background-color: #fdeaef;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+.main-container > .sidebar > .sidebar-head {
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: center;
+}
+.main-container > .sidebar hr{
+    width: 100%;
+    border-color: #3d1522;
+    margin-bottom: 0;
+}
+.main-container > .sidebar > .sidebar-content{
+}
+.main-container > .sidebar > .sidebar-content a{
+    display: block;
+    color: #3d1522;
+    padding: 10px 0 10px 0;
+    border-bottom: 1px solid #3d1522;
+    text-decoration: none;
+    width: 100%;
+}
+.main-container > .sidebar > .sidebar-content a:hover{
+    color: #ff8674;
+    border-bottom: 1px solid #ff8674;
+}
+
+@media (min-width: 768px) {
+    .main-container {
+        margin-left: 144px;
+        margin-right: 144px;
+    }
+
+    .main-container > .sidebar {
+        width: 500px;
+        height: auto;
+        margin-right: 15px;
+    }
+}
+
+.links {
+    display: inline-block;
+    margin: 10px;
+}
+
+.product-card {
+    box-shadow: rgb(102, 122, 145) 0px 3px 8px;
+    border-radius: 5px;
+}
