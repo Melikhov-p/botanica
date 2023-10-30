@@ -75,47 +75,10 @@ body {
     justify-content: space-between;
 }
 
-.main-container > .sidebar {
-    background-color: #fdeaef;
-    padding: 10px;
-    border-radius: 10px;
-    text-align: center;
-}
-.main-container > .sidebar > .sidebar-head {
-    font-weight: bold;
-    font-size: 1.5em;
-    text-align: center;
-}
-.main-container > .sidebar hr{
-    width: 100%;
-    border-color: #3d1522;
-    margin-bottom: 0;
-}
-.main-container > .sidebar > .sidebar-content{
-}
-.main-container > .sidebar > .sidebar-content a{
-    display: block;
-    color: #3d1522;
-    padding: 10px 0 10px 0;
-    border-bottom: 1px solid #3d1522;
-    text-decoration: none;
-    width: 100%;
-}
-.main-container > .sidebar > .sidebar-content a:hover{
-    color: #ff8674;
-    border-bottom: 1px solid #ff8674;
-}
-
 @media (min-width: 768px) {
     .main-container {
         margin-left: 144px;
         margin-right: 144px;
-    }
-
-    .main-container > .sidebar {
-        width: 500px;
-        height: auto;
-        margin-right: 15px;
     }
 }
 
@@ -123,7 +86,6 @@ body {
     display: inline-block;
     margin: 10px;
 }
-
 .product-card {
     box-shadow: rgb(102, 122, 145) 0px 3px 8px;
     border-radius: 5px;
