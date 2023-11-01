@@ -6,6 +6,6 @@
     <div class="header-center">
         <h1>BOTANICA</h1>
         <hr>
-        <div class=“links”><a href={% url 'main_page' %}>Главная</a><a href={% url 'contacts' %}>Контакты</a><a href='#'>О нас</a></div>
+        <div class=“links”><a href={% url 'shop:main_page' %}>Главная</a><a href={% url 'shop:contacts' %}>Контакты</a><a href='{% url 'shop:about_us' %}'>О нас</a></div>
     </div>
 </header>

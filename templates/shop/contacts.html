@@ -1,5 +1,27 @@
 {% extends 'shop/_base.html' %}
+{% load static %}
 {% block title %} Контакты {% endblock %}
 {% block content %}
-
+    <div class="main-container">
+        <link href="{% static "css/contacts.css" %}" rel="stylesheet">
+        <div class="contacts-container">
+            <div class="ya-cart">
+                <div style="position:relative;overflow:hidden;">
+                    <iframe src="https://yandex.ru/map-widget/v1/?ll=36.597693%2C50.594146&mode=poi&poi%5Bpoint%5D=36.593236%2C50.594414&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D1336162158&z=16"></iframe>
+                </div>
+            </div>
+            <div class="contacts-links">
+                <div class="contacts-social">
+                    <a href="#" target="_blank"><img alt="instagram" src="/media/default/instagram.png"/><span>Instagram</span></a>
+                    <a href="https://t.me/botanica_belgorod" target="_blank"><img alt="telegram" src="/media/default/telegram.png"/><span>Telegram</span></a>
+                    <a href="https://vk.com/botanicaflowers" target="_blank"><img alt="vkontakte"  src="/media/default/vkontakte.png"/><span>VK</span></a>
+                </div>
+                <div class="contacts-data">
+                    <span>+7 (999) 999 99-99</span>
+                    <span>botanicaflowers.25@yandex.ru</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
 {% endblock %}

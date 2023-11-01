@@ -11,132 +11,48 @@
 {% block content %}
     <div class="sub-header">
         <div class="sub-header-links">
-            <a href="#">Цветы</a>
-            <a href="#">Игрушки</a>
-            <a href="#">Украшения</a>
-            <a href="#">Открытки</a>
+            <a href="{% url 'shop:main_page'%}" {% if not chosen_category %}style="background-color: #fbfbfb"{% endif %}>Всё</a>
+        {% for category in categories %}
+            <a href="{% url 'shop:product_list_by_category' category.slug%}" {% if category.slug == chosen_category.slug %}style="background-color: #fbfbfb"{% endif %}>{{ category.name.title }}</a>
+        {% endfor %}
         </div>
     </div>
     <div class="animate main-container">
-        <div class="product-list-container">
-            <div class="product-list">
+        <div class="products-list-container">
+            {% if products.count == 0 %}
+            <div class="empty-products-list">
+                Этого у нас пока нет, но скоро появится.
+            </div>
+            {% endif %}
+            <div class="products-list">
+                {% for product in products %}
                 <div class="product-card">
                     <div class="product-image">
                         <img src="/media/default/default_product_image.png"/>
                     </div>
                     <div class="product-card-content">
                         <div class="product-card-name">
-                            Роза
+                            {{ product.name }}
                         </div>
                         <div class="product-card-desc">
-                            Ро́за — собирательное название видов и сортов представителей рода Шипо́вник (лат. Rósa), выращиваемых человеком и растущих в дикой природе.
+                            {{ product.description }}
                         </div>
                         <div class="product-card-price">
-                            100 ₽
+                            {{ product.price }} ₽
                         </div>
+                        <span class="product-category"><a href="{% url 'shop:product_list_by_category' product.category.slug%}">{{ product.category.name }}</a></span>
                         <div class="product-card-buttons">
-                            <a href="#" class="button">Купить</a>
+                            <a href="" class="button">Предзаказ</a>
                         </div>
                     </div>
                 </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="/media/default/default_product_image.png"/>
-                    </div>
-                    <div class="product-card-content">
-                        <div class="product-card-name">
-                            Роза
-                        </div>
-                        <div class="product-card-desc">
-                            Ро́за — собирательное название видов и сортов представителей рода Шипо́вник (лат. Rósa), выращиваемых человеком и растущих в дикой природе.
-                        </div>
-                        <div class="product-card-price">
-                            100 ₽
-                        </div>
-                        <div class="product-card-buttons">
-                            <a href="#" class="button">Купить</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="/media/default/default_product_image.png"/>
-                    </div>
-                    <div class="product-card-content">
-                        <div class="product-card-name">
-                            Роза
-                        </div>
-                        <div class="product-card-desc">
-                            Ро́за — собирательное название видов и сортов представителей рода Шипо́вник (лат. Rósa), выращиваемых человеком и растущих в дикой природе.
-                        </div>
-                        <div class="product-card-price">
-                            100 ₽
-                        </div>
-                        <div class="product-card-buttons">
-                            <a href="#" class="button">Купить</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="/media/default/default_product_image.png"/>
-                    </div>
-                    <div class="product-card-content">
-                        <div class="product-card-name">
-                            Роза
-                        </div>
-                        <div class="product-card-desc">
-                            Ро́за — собирательное название видов и сортов представителей рода Шипо́вник (лат. Rósa), выращиваемых человеком и растущих в дикой природе.
-                        </div>
-                        <div class="product-card-price">
-                            100 ₽
-                        </div>
-                        <div class="product-card-buttons">
-                            <a href="#" class="button">Купить</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="/media/default/default_product_image.png"/>
-                    </div>
-                    <div class="product-card-content">
-                        <div class="product-card-name">
-                            Роза
-                        </div>
-                        <div class="product-card-desc">
-                            Ро́за — собирательное название видов и сортов представителей рода Шипо́вник (лат. Rósa), выращиваемых человеком и растущих в дикой природе.
-                        </div>
-                        <div class="product-card-price">
-                            100 ₽
-                        </div>
-                        <div class="product-card-buttons">
-                            <a href="#" class="button">Купить</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="/media/default/default_product_image.png"/>
-                    </div>
-                    <div class="product-card-content">
-                        <div class="product-card-name">
-                            Роза
-                        </div>
-                        <div class="product-card-desc">
-                            Ро́за — собирательное название видов и сортов представителей рода Шипо́вник (лат. Rósa), выращиваемых человеком и растущих в дикой природе.
-                        </div>
-                        <div class="product-card-price">
-                            100 ₽
-                        </div>
-                        <div class="product-card-buttons">
-                            <a href="#" class="button">Купить</a>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
+<div class="fixed-bottom-right">
+  <a href="#">Корзина</a>
+</div>
 {% endblock %}
 </body>
 </html>
