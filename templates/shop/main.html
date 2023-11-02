@@ -28,7 +28,7 @@
                 {% for product in products %}
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="/media/default/default_product_image.png"/>
+                        <img src="/media/default/buket_about_1.jpg"/>
                     </div>
                     <div class="product-card-content">
                         <div class="product-card-name">
@@ -42,7 +42,11 @@
                         </div>
                         <span class="product-category"><a href="{% url 'shop:product_list_by_category' product.category.slug%}">{{ product.category.name }}</a></span>
                         <div class="product-card-buttons">
+                            {% if request.user.is_staff %}
+                            <a href="" class="button">Редактировать</a>
+                            {% else %}
                             <a href="" class="button">Предзаказ</a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
@@ -50,6 +54,7 @@
             </div>
         </div>
     </div>
+<a class="btn-up" href="#header">наверх</a>
 <div class="fixed-bottom-right">
   <a href="#">Корзина</a>
 </div>

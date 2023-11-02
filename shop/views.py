@@ -1,3 +1,4 @@
+from django.contrib.auth import logout
 from django.shortcuts import render, get_object_or_404, redirect
 from shop.models import Category, Product
 
@@ -21,3 +22,8 @@ def contacts(request):
 
 def about_us(request):
     return render(request, 'shop/about_us.html')
+
+
+def admin_logout(request):
+    logout(request)
+    return redirect('shop:main_page')

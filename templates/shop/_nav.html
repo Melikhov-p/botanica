@@ -2,10 +2,14 @@
 <link href="{% static "css/base.css" %}" rel="stylesheet">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<header>
+{% if request.user.is_staff %}<a href="{% url 'shop:admin_logout' %}" style="text-align: center; background-color: #3d1522; color: #e1ced1; position: fixed; top: 0; z-index: 1; height: 25px; width: 250px;">Выйти из админ. аккаунта</a>{% endif %}
+<header id="header">
     <div class="header-center">
         <h1>BOTANICA</h1>
         <hr>
-        <div class=“links”><a href={% url 'shop:main_page' %}>Главная</a><a href={% url 'shop:contacts' %}>Контакты</a><a href='{% url 'shop:about_us' %}'>О нас</a></div>
+        <div class=“links”><a href={% url 'shop:main_page' %}>Главная</a>
+            <a href={% url 'shop:contacts' %}>Контакты</a>
+            <a href='{% url 'shop:about_us' %}'>О нас</a>
+        </div>
     </div>
 </header>
