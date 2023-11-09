@@ -1,37 +1,51 @@
-.contacts-container{
+.contacts-container {
     width: 100%;
 }
-.ya-cart iframe{
+
+.ya-cart iframe {
     border: none;
     position: relative;
     width: 100%;
     height: 400px;
 }
+
 .contacts-links {
     display: flex;
     justify-content: space-evenly;
     margin-top: 15px;
 }
-.contacts-social{
+
+.contacts-social {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
-.contacts-social > a{
+
+.contacts-social > a {
     font-size: 18px;
-    font-family: Circe,Trebuchet MS, serif;
+    font-family: Circe, Trebuchet MS, serif;
     text-decoration: none;
     color: #3d1522;
 }
-.contacts-social > a:hover{
+
+.contacts-social > a:hover {
     color: #f0dbde;
 }
-.contacts-social > a > img{
-    width:20px;
+
+.contacts-social > a > img {
+    width: 20px;
     margin-right: 5px;
 }
-.contacts-data{
+
+.contacts-data {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+}
+
+.contacts-rating > iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
 }

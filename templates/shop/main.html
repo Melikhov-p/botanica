@@ -45,7 +45,7 @@
                             {% if request.user.is_staff %}
                             <a href="" class="button">Редактировать</a>
                             {% else %}
-                            <a href="" class="button">Предзаказ</a>
+                            <a href="{% url 'orders:preorder' product.id%}" class="button">Предзаказ</a>
                             {% endif %}
                         </div>
                     </div>

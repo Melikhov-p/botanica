@@ -1,6 +1,7 @@
 from django.contrib.auth import logout
 from django.shortcuts import render, get_object_or_404, redirect
 from shop.models import Category, Product
+from notifications.tg_notifications import tg_notification_order
 
 def main(request, category_slug=None):
     category = None
@@ -26,4 +27,9 @@ def about_us(request):
 
 def admin_logout(request):
     logout(request)
+    return redirect('shop:main_page')
+
+
+def preorder(request, category_slug=None, product: Product = None):
+    admins_notification = tg_notification_order(Product)
     return redirect('shop:main_page')
